@@ -1,1 +1,111 @@
-to begin
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Range Anxiety
+
+
+
+        // let CurrentDistance = 150
+        // let TargetDistance = 350;
+        // let DistanceToCover = TargetDistance - CurrentDistance;
+        // console.log(`You have done ${CurrentDistance} km  and you have ${DistanceToCover} km to go`);
+
+        function CalculateRange(CurrentDistance, TargetDistance) {
+            // let CurrentDistance = 150
+            // let TargetDistance = 350;
+            let DistanceToCover = TargetDistance - CurrentDistance;
+            console.log(`You have done ${CurrentDistance} km  and you have ${DistanceToCover} km to go`);
+        }
+
+        CalculateRange(100, 500);
+        CalculateRange(50, 250);
+        CalculateRange(23, 46);
+        CalculateRange(56, 100);
+
+
+        // Dog years program into a function
+
+        function HumanYearsToDogYears(humanYears) {
+
+            let yearsRatio = 7;
+            let DogYears = humanYears * yearsRatio;
+            console.log(`The dog is ${DogYears} in dog years`)
+
+        }
+
+        HumanYearsToDogYears(5)
+        HumanYearsToDogYears(6)
+        HumanYearsToDogYears(7)
+        HumanYearsToDogYears(8)
+        HumanYearsToDogYears(9)
+        HumanYearsToDogYears(10)
+        HumanYearsToDogYears(11)
+
+        // Cat years (15 + 4) into a function    
+
+        function HumanYearsToCatYears(CatCurrentAge) {
+
+            let CatFirstYear = 15;
+            let CatOtherYear = 4;
+
+            let CatRealYears = CatFirstYear + ((CatCurrentAge - 1) * CatOtherYear)
+            message = `My cat is ${CatRealYears} Cat years`
+            console.log(message)
+        }
+
+        HumanYearsToCatYears(5)
+        HumanYearsToCatYears(6)
+        HumanYearsToCatYears(7)
+        HumanYearsToCatYears(8)
+        HumanYearsToCatYears(9)
+        HumanYearsToCatYears(10)
+        HumanYearsToCatYears(11)
+
+
+
+        function CalculateRangeOnly(CurrentDistance, TargetDistance) {
+
+            let DistanceToCover = TargetDistance - CurrentDistance;
+
+            return DistanceToCover;
+
+        }
+
+        let currentRange = 0;
+        let currentDistance = 100;
+        let targetDistance = 500
+        currentRange = CalculateRangeOnly(currentDistance, targetDistance);
+        console.log(`You have done ${currentDistance} km  and you have ${currentRange} km to go`);
+
+        currentDistance = 50;
+        targetDistance = 250
+        currentRange = CalculateRangeOnly(50, 250);
+        console.log(`You have done ${currentDistance} km  and you have ${currentRange} km to go`);
+
+        
+        currentRange = CalculateRangeOnly(23, 46);
+        currentRange = CalculateRangeOnly(56, 100);
+
+
+        //
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Lesson 2 Week Functions</h1>
+
+
+</body>
+
+</html>

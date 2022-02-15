@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // alert("Hello World") // This is a single line comment, illustrating a function called alert which takes text as a parameter
+
+        // let myName = 'John';  //now how we use backtick to 'interpolate' the variable
+        // alert(`Hello World. This is ${myName} calling`) // note the use of the backtick (`) operator, usually found top left of your keyboard
+
+        // alert("Hello World. This is " + myName + " is calling"); // + operator to concatenate strings into a single string
+
+
+        let myName = 'John';  //now how we use backtick to 'interpolate' the variable
+        let greeting = `Hello World. This is ${myName} calling`;
+        console.log(greeting);
+
+
+
+
+        //programatically - show how many years you have left before you 
+        let age = 60
+        // console.log(`I am ${age} years of age`)
+        let targetYear = 100;
+        let yearsRemaining = targetYear - age;
+        console.log(`I will be ${targetYear} in ${yearsRemaining} years`);
+
+        // My dog is 5 human years old. How many years in dog years is he if a dog ages 7 years per human year (*)
+        let dogYears = 5;
+        let ratio = 7;
+        let myDogYears = dogYears * ratio;
+
+        let message = `My dog is ${myDogYears} dog years`
+        console.log(message)
+
+        // My cat is 6 human years. How many years in cat years is she if a cat ages 15 cat years per human year
+        let CatYears = 6;
+        let CatRatio = 15;
+        let myCatYears = CatYears * CatRatio;
+        message = `My cat is ${myCatYears} Cat years`
+        console.log(message)
+
+      
+
+// How many years in cat years is she ages 15 cat years for their first year, and 4 years per year after ()
+    
+        let CatFirstYear = 15;
+        let CatOtherYear = 4;
+        let CatCurrentAge = 2;
+        let CatRealYears = CatFirstYear + ( (CatCurrentAge-1) * CatOtherYear)
+        message = `My cat is ${CatRealYears} Cat years`
+        console.log(message)
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Welcome</h1>
+
+
+</body>
+
+</html>
