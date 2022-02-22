@@ -50,3 +50,33 @@ SetUpRainbow3(colours)
 
 ListColours(colours)
 
+
+function WashLaundry(laundry) {
+
+    while ( laundry.length > 0 ) {
+
+        let itemToWash = laundry.pop();
+       
+    
+        console.log(`I am washing ${itemToWash}`)
+    
+    }
+}
+
+const laundry = ["Shirt", "Trousers", "Socks", "Sweaters"]
+WashLaundry(laundry)
+
+const planets = ["Mercury","Venus","Earth"]
+
+function DestroyPlanets(planets) {
+
+    while ( planets.length > 0 ) {
+
+        let destroyedPlanet = planets.pop();
+        console.log(`I am Thanos and I have destroyed ${destroyedPlanet}`)
+    
+    }
+}
+
+DestroyPlanets(planets)
+
