@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="./js/cars1.js"></script>
+    <style>
+        .flavour {color: red}
+    </style>
+</head>
+<body onload="init()">
+ 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Local Storage: Cars Exercise</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"><input type="text" class="form-control" id="tbMf" placeholder="Manufacturer"/></div>
+            <div class="col-md-3"><input type="text" class="form-control" id="tbModel" placeholder="Model"/></div>
+            <div class="col-md-3"><input type="text" class="form-control" id="tbColour" placeholder="Colour"/></div>
+            <div class="col-md-3"><button class='btn btn-primary' onclick="btnSave()">Save</button></div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="liCarMf">?</li>
+                        <li class="list-group-item" id="liCarModel">?</li>
+                        <li class="list-group-item" id="liCarColour">?</li>
+                       
+                      </ul>
+
+
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+
+        
+    </div>
+    
+</body>
+</html>
