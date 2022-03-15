@@ -4,22 +4,24 @@ const APP_SETTINGS = {
     "LS_MODEL": "model",
     "LS_COLOUR": "colour",
     "LS_CAR_OBJECT": "CarDetails",
+    "LS_FLEET": "CarFleet",
 
 
 }
+
+let fleet = [];
 
 function init() {
-    retrieve();
+  renderFleet()
+}   
+
+function renderFleet() {
+
+    fleet = JSON.parse(localStorage.getItem(APP_SETTINGS.LS_FLEET))
+
+    renderListFromObject(fleet);
 }
 
-function retrieve() {
-     const CarObjectAsString = localStorage.getItem(APP_SETTINGS.LS_CAR_OBJECT);
-    
-    const CarObject = JSON.parse(CarObjectAsString); // reversing the process of stringify
-    
-    renderListFromObject(CarObject) 
-
-}
 
 
 function btnSave() {
@@ -34,67 +36,58 @@ function btnSave() {
         "colour" : colour
     }
 
-//    console.log({CarObject})
+    fleet.push(CarObject)
 
-   const carObjectAsString = JSON.stringify(CarObject);
+   const fleetAsString = JSON.stringify(fleet);
 
 //    console.log(carObjectAsString)
 
-    localStorage.setItem(APP_SETTINGS.LS_CAR_OBJECT, carObjectAsString);
+    localStorage.setItem(APP_SETTINGS.LS_FLEET, fleetAsString);
   
 
-    renderListFromObject(CarObject);
+    renderListFromObject(fleet);
 
 }
 
-function renderList(mf, model, colour) {
+function renderListFromObject(CarFleet) {
 
+console.log()
+   
+    let TableContainer = document.getElementById("tbbodyCardata")
 
-    if (mf === undefined  || mf === null) {
-        mf = "n/a"
+    let htmlString = [];
+   
+    for(const [index, currentCar] of CarFleet.entries()) {
+
+        const removeButton = `<button class="btn btn-danger" onclick="removeCar(${index})">Remove</button>`;
+
+        const rowItem = `<tr><td>${currentCar.mf}</td><td>${currentCar.model}</td><td>${currentCar.colour}</td><td>${removeButton}</td></tr`;
+
+        htmlString.push(rowItem)
     }
 
-    if (model === undefined || model === null) {
-        model = "n/a"
-    }
+   
 
+    TableContainer.innerHTML = htmlString.join(' ');
 
-    if (colour === undefined || colour === null) {
-        colour = "n/a"
-    }
+}
 
+function removeCar(indexOfCar) {
 
-    document.getElementById("liCarMf").innerHTML = mf
-    document.getElementById("liCarModel").innerHTML = model
-    document.getElementById("liCarColour").innerHTML = colour
+    fleet.splice(indexOfCar,1);
+    localStorage.setItem(APP_SETTINGS.LS_FLEET, JSON.stringify(fleet));
 
-
+    renderListFromObject(fleet);
 
 
 }
 
-function renderListFromObject(CarDetails) {
-
-
-    if (CarDetails.mf === undefined  || CarDetails.mf === null) {
-        mf = "n/a"
-    }
-
-    if (CarDetails.model === undefined || CarDetails.model === null) {
-        model = "n/a"
-    }
-
-
-    if (CarDetails.colour === undefined || CarDetails.colour === null) {
-        colour = "n/a"
-    }
-
-
-    document.getElementById("liCarMf").innerHTML = CarDetails.mf
-    document.getElementById("liCarModel").innerHTML = CarDetails.model
-    document.getElementById("liCarColour").innerHTML = CarDetails.colour
-
-
-
+function retrieve() {
+    const CarObjectAsString = localStorage.getItem(APP_SETTINGS.LS_CAR_OBJECT);
+   
+   const CarObject = JSON.parse(CarObjectAsString); // reversing the process of stringify
+   
+   renderListFromObject(CarObject) 
 
 }
+
