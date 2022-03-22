@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="./js/tickets.js"></script>
+    <title>Document</title>
+</head>
+<body onload="init()">
+
+    <div class="container">
+        <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                  Book Your Movie
+                </div>
+        
+        
+            <table class="table">
+                <tr>
+                    <td>Adult Tickets</td>
+                    <td><span id="adultTicketCount">0</span></td>
+                    <td><button class='btn btn-primary btn-sm' onclick="addTicket('adult')">+</button></td>
+                    <td><button class='btn btn-primary btn-sm' onclick="removeTicket('adult')">-</button> </td>
+                </tr>
+                <tr>
+                    <td>Child Tickets</td>
+                    <td><span id="childTicketCount">0</span></td>
+            
+                    <td><button class='btn btn-primary btn-sm' onclick="addTicket('child')">+</button></td>
+                    <td><button class='btn btn-primary btn-sm' onclick="removeTicket('child')">-</button></td>
+                </tr>
+                <tr>
+            
+                    <td colspan='3'>Total Ticket Price: </td>
+                    <td style='text-align: left'><span id="totalTicketPrice"></span></td>
+            
+                </tr>
+            </table>
+        </div>
+        
+        </div>
+        <div class="col-md-6"></div>
+        
+        </div>
+    
+</body>
+</html>

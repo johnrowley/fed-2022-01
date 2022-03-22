@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/calc.js"></script>
+    <style>
+
+        #messagePanel { border: solid 1px red; width: 200px; height: 100px; margin-top: 10px;}
+    </style>
+</head>
+<body onload="init()">
+
+    <input type="text" id ="tbNum1" onfocus="clearField(this)"/>
+    <input type="text" id ="tbNum2" onfocus="clearField(this)"/>
+    <button onclick="add()">Add Numbers</button>
+    <div id="messagePanel">
+
+
+    </div>
+    
+</body>
+</html>
