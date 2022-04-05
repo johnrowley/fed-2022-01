@@ -17,7 +17,8 @@ function SetupMovieLoader() {
 
     $('#btnLoadMovies').on('click', function () {
 
-        const url = './data/movies.json';
+      //  const url = './data/movies.json';
+        const url = 'https://college-movies.herokuapp.com/';
 
         $.getJSON(url, function (jsondata) {
 
@@ -36,7 +37,6 @@ function SetupMovieLoader() {
 function RenderMovieDataAsTable(jsonData) {
 
     movieListing = jsonData;
-
     htmlString = [];
   
     for (const movie of movieListing) {
@@ -49,18 +49,13 @@ function RenderMovieDataAsTable(jsonData) {
 
         htmlString.push("<tr>")
     }
-
     $('tbody#movieBody').append(htmlString.join(" "));
-
 }
 
-
 function renderMovieDetail(movieId) {
-
     movieDetail =movieListing.find(x => x.id == movieId);
 
     const { title, year, director, id, cast, ...rest } = movieDetail;
-
     htmlString = [];
     htmlString.push("<tr>")
     htmlString.push(`<td>${title}</td><td>${year}</td><td>${director}</td>`);
@@ -71,7 +66,6 @@ function renderMovieDetail(movieId) {
     console.log(`rendering detail for movie ${movieId}`) 
 
     $('#table2').show();
-
 }
 
 
