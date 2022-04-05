@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="./js/seating.js"></script>
+    <style>
+        #messagePanel {
+            width: 500px;
+
+            border: solid 1px red;
+            padding: 25px;
+        }
+
+       
+        .seat {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: solid 1px red;
+            float: left;
+        }
+
+        .reserved {
+            background-color: palevioletred;
+        }
+
+        .selected {
+            background-color: green;
+        }
+
+        .clear {clear: left;}
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row" id="seating1">
+        <div class="seat reserved" data-row="1" data-col="1"></div>
+        <div class="seat" data-row="1" data-col="2"></div>
+        <div class="seat" data-row="1" data-col="3"></div>
+        <div class="seat" data-row="" data-col="4"></div>
+        <div class="seat" data-row="" data-col="5"></div>
+        <div class="seat" data-row="" data-col="6"></div>
+    </div>
+    <div class="row" id="seating2">
+        <div class="seat" data-row="2" data-col="1"></div>
+        <div class="seat" data-row="2" data-col="2"></div>
+        <div class="seat" data-row="2" data-col="3"></div>
+        <div class="seat" data-row="2" data-col="4"></div>
+        <div class="seat" data-row="2" data-col="5"></div>
+        <div class="seat" data-row="2" data-col="6"></div>
+    </div>
+    <div class="row" id="seating2">
+        <div class="seat" data-row="3" data-col="1"></div>
+        <div class="seat" data-row="3" data-col="2"></div>
+        <div class="seat" data-row="3" data-col="3"></div>
+        <div class="seat" data-row="3" data-col="4"></div>
+        <div class="seat" data-row="3" data-col="5"></div>
+        <div class="seat" data-row="3" data-col="6"></div>
+    </div>
+
+</div>
+<div class="container">
+
+    <div class="row"><span id="seatsChosen">xxxxxxxxxx</span></div>
+
+</div>
+
+    
+</body>
+</html>
