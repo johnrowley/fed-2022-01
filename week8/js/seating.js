@@ -23,8 +23,14 @@ function InitSeating(maxSeats) {
         }
 
 
-
         $(this).addClass(`selected`);
+
+        
+        if (!isValidSeatChoice()) {
+            $(this).removeClass(`selected`);
+            return;
+
+        };
 
         ShowSeatCount();
        
@@ -59,6 +65,25 @@ function ShowSeatCount() {
 
     $('#seatsChosen').html(`Selected Seats: ${chosenSeatStrings.join(', ')}`);
 
+}
+
+function isValidSeatChoice() {
 
 
+    let rowsChosen = [];
+
+
+    $(`.selected`).each( function (index) {
+        const row = $(this).data('row')
+        console.log(`row is ${row}`)
+
+        if (!rowsChosen.includes(row)) {
+            rowsChosen.push(row);
+        }
+
+    })
+
+    console.log({rowsChosen});
+
+    return  rowsChosen.length <=1 ? true : false;
 }
